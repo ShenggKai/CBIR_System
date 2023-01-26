@@ -36,6 +36,11 @@ Folders:
 You can clone this repo and install datasets separately or you can download the whole compressed file that we have already downloaded and structured.
 
 ### 1. Install datasets separately
+
+Datasets use for the project:  
+- [**Oxford Buildings Dataset**](https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/) (5062 images)
+- [**Paris Dataset**](https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/) (6412 images)
+
 Download the compressed file [here](https://) and we require user an extra structuring step, **./static** should look like this:
 
 ```
