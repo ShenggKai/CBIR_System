@@ -6,6 +6,8 @@
 !.vscode/extensions.json
 !.vscode/*.code-snippets
 
+# exclude dataset folder
+dataset/
 # Local History for Visual Studio Code
 .history/
 
