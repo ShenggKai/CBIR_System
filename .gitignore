@@ -6,14 +6,18 @@
 !.vscode/extensions.json
 !.vscode/*.code-snippets
 
-# exclude dataset folder
-dataset/
 # Local History for Visual Studio Code
 .history/
 
 # Built Visual Studio Code Extensions
 *.vsix
 
+#----------------------------------------------------------------#
+# exclude dataset folder
+dataset/
+
+# exclude demo.py
+demo.py
 #----------------------------------------------------------------#
 
 #for python
