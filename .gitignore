@@ -15,9 +15,6 @@
 #----------------------------------------------------------------#
 # exclude dataset folder
 dataset/
-
-# exclude demo.py
-demo.py
 #----------------------------------------------------------------#
 
 #for python
@@ -69,7 +66,6 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *.cover
-*.py,cover
 .hypothesis/
 .pytest_cache/
 cover/
