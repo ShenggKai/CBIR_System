@@ -15,6 +15,12 @@
 #----------------------------------------------------------------#
 # exclude dataset folder
 dataset/
+
+# exclude feature folder
+feature/
+
+# exclude uploaded folder
+uploaded/
 #----------------------------------------------------------------#
 
 #for python
