@@ -1,8 +1,8 @@
+import os
+import numpy as np
 from PIL import Image
 from feature_extractor import FeatureExtractor
 from tqdm import tqdm
-import numpy as np
-import os
 
 data_folder = r"static\image"
 feature_folder = r"static\feature"

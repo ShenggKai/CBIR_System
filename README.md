@@ -72,7 +72,7 @@ You can clone this repo and install datasets separately or you can download the 
 
 Datasets use for the project:  
 - [**Oxford Buildings Dataset**](https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/) (5062 images)
-- [**Paris Dataset**](https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/) (6412 images)
+- [**Paris Dataset**](https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/) (6412 images - 20 images are corrupted, list of corrupt images is available [here](https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/corrupt.txt))
 
 Download the compressed file [here](https://) and we require user an extra structuring step, **./static** should look like this:
 

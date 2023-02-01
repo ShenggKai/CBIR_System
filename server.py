@@ -1,5 +1,5 @@
-import numpy as np
 import os
+import numpy as np
 from PIL import Image
 from feature_extractor import FeatureExtractor
 from datetime import datetime
