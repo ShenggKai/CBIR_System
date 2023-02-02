@@ -21,6 +21,9 @@ feature/
 
 # exclude uploaded folder
 uploaded/
+
+# exclude demo folder
+demo/
 #----------------------------------------------------------------#
 
 #for python
