@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F9F7F0;
+    /* background-color: darkslategrey; */
+}
+
+/* header --------------------------------*/
+header {
+    height: 65px;
+    background-color: #3E98A4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+}
+
+.icons {
+    display: flex;
+    /* align-items: center; */
+    /* margin-right: 25px; */
+}
+
+.github-icon,
+.theme-icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 41px;
+}
+
+.home-button,
+.about-button {
+    position: absolute;
+    top: 19px;
+
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.home-button {
+    left: 286px;
+}
+
+.about-button {
+    left: 378px;
+    color: white;
+    /* font-weight: 600; */
+}
+
+.not-link{
+    text-decoration: none;
+    color: #D5D5D5;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+/* end header --------------------------------*/
+
+/* about -------------------------------------*/
+.content{
+    display: flex;
+}
+
+.paris-image{
+    height: 412px;
+    margin-left: 81px;
+    margin-top: 89px;
+}
+
+figcaption{
+    width: 253px;
+    height: 20px;
+    margin-left: 101px;
+    margin-top: 14px;
+    
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    color: #222222;
+}
+
+.not-link-caption{
+    text-decoration: none;
+    color: #188CA5;
+}
+
+.text-container{
+    /* display: inline; */
+    margin-left: 65px;
+    margin-top: 89px;
+    margin-right: 90px;
+}
+
+.title{
+    /* width: 734px;
+    height: 54px; */
+
+    font-style: normal;
+    font-weight: 530;
+    font-size: 40px;
+
+    color: #188CA5;
+}
+
+.lorem-ipsum {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+
+    color: #000000;
+}
+/* end about ---------------------------------*/
