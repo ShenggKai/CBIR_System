@@ -1,3 +1,8 @@
+![last commit](https://img.shields.io/github/last-commit/ShenggKai/CBIR_System?logo=git)
+![repo size](https://img.shields.io/github/repo-size/ShenggKai/CBIR_System?logo=github)
+![code size](https://img.shields.io/github/languages/code-size/ShenggKai/CBIR_System?logo=GitHub)
+![license](https://img.shields.io/github/license/ShenggKai/CBIR_System)
+![Made with love in Vietnam](https://madewithlove.now.sh/vn?heart=true&colorB=%23da251d)
 # CS336: Multimedia Information Retrieval 2023
 Final Project: Project 2 - Image Retrieval  
 Supported features:
