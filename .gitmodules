@@ -1,0 +1,3 @@
+[submodule "MyDemo"]
+	path = MyDemo
+	url = https://github.com/ShenggKai/MyDemo
