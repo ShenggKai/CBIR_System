@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="icon\logo.ico">
+    <link rel="stylesheet" href="style.css">
+    <title>CBIR system</title>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="icon\logo_text.svg" alt="logo" class="logo" />
+            </a>
+        </div>
+        <div class="buttons">
+            <button class="home-button">Home</button>
+            <button class="about-button">
+                <a href="about.html" class="not-link">About</a>
+            </button>
+        </div>
+        <div class="icons">
+            <a href="https://github.com/ShenggKai/CBIR_System" target="_blank">
+                <img src="icon\github.svg" alt="github" class="github-icon">
+            </a>
+            <img src="icon\light.svg" alt="theme" class="theme-icon">
+        </div>
+    </header>
+
+    <div class="region">
+        <div class="upload-region">
+            <div class="note">
+                <p class="format-note">Only accepted .jpg file</p>
+            </div>
+
+            <div class="input">
+                <div class="custom-file-upload">
+                    <img src="icon\upload.svg" alt="upload" class="upload-icon">
+                    <p class="text-button">Upload image</p>
+                </div>
+                <!-- <input type="file" id="fileInput" style="display: none;" /> -->
+
+                <div class="note">
+                    <p class="or-note">or</p>
+                </div>
+
+                <div class="url-upload">
+                    <p class="text-url">Enter image URL</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-region">
+            <div class="note">
+                <p class="dataset-note">Select dataset:</p>
+                <p class="method-note">Select method:</p>
+            </div>
+
+            <div class="input">
+                <select class="dataset-select">
+                    <option value="option1">Oxford Buildings</option>
+                    <option value="option2">Paris dataset</option>
+                </select>
+    
+                <select class="method-select">
+                    <option value="option1">CNN</option>
+                    <option value="option2">DEFL</option>
+                </select>
+
+                <button class="btn-search">
+                    <img src="icon\search.svg" alt="search" class="search-icon">
+                    <p class="text-search">Search</p>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="review">
+        <img src="other\review.jpg" alt="review image" class="review-image">
+    </div>
+
+</body>
+</html>
