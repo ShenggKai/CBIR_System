@@ -314,11 +314,19 @@ select {
 /* end input search ---------------*/
 
 /* image review -----------------------*/
-.review-image {
+.review-container{
     width: 608px;
     height: 457px;
     margin-left: 400px;
     margin-top: 25px;
+
+    overflow: hidden;
+}
+
+.review-image {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
 }
 
 /* end image review -------------------*/
