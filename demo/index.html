@@ -39,10 +39,12 @@
 
             <div class="input">
                 <div class="custom-file-upload">
-                    <img src="icon\upload.svg" alt="upload" class="upload-icon">
-                    <p class="text-button">Upload image</p>
+                    <input type="file" id="file-input" accept="image/jpeg">
+                    <label for="file-input">
+                        <img src="icon\upload.svg" alt="upload" class="upload-icon">
+                        <p class="text-button">Upload image</p>
+                    </label>
                 </div>
-                <!-- <input type="file" id="fileInput" style="display: none;" /> -->
 
                 <div class="note">
                     <p class="or-note">or</p>
@@ -87,6 +89,7 @@
         <img src="other\review.jpg" alt="review image" class="review-image">
     </div>
 
+    <script src="main.js"></script>
 </body>
 
 </html>
