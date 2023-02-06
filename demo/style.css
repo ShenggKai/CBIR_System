@@ -106,6 +106,19 @@ header {
     height: 42px;
     display: flex;
     color: #5A5A5A;
+
+    justify-content: center;
+}
+
+.note-right {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    /* line-height: 25px; */
+    /* identical to box height */
+    height: 42px;
+    display: flex;
+    color: #5A5A5A;
 }
 
 .format-note {
@@ -113,7 +126,7 @@ header {
     align-items: center;
     text-align: center; */
 
-    margin-left: 174px;
+    /* margin-left: 174px; */
     margin-top: 17px;
 }
 
