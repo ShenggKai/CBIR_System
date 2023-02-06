@@ -315,9 +315,9 @@ select {
 
 /* image review -----------------------*/
 .review-container{
-    width: 608px;
+    width: 1040px;
     height: 457px;
-    margin-left: 400px;
+    margin-left: 184px;
     margin-top: 25px;
 
     overflow: hidden;
