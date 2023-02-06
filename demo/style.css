@@ -208,6 +208,10 @@ header {
     margin-top: 13px;
 }
 
+.no-underline {
+    text-decoration: none;
+}
+
 /* end input load image -------------------*/
 
 /* input search -------------------*/
@@ -261,6 +265,8 @@ select {
 
     outline: none;
     border: none;
+
+    cursor: pointer;
 }
 
 .text-search{
@@ -278,6 +284,7 @@ select {
     align-items: center;
     text-align: center;
     
+    text-decoration: none;
     color: #188CA5;
 }
 /* end input search ---------------*/
