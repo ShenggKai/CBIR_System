@@ -23,7 +23,7 @@ feature/
 uploaded/
 
 # exclude demo folder
-demo/
+# demo/
 #----------------------------------------------------------------#
 
 #for python
