@@ -5,29 +5,93 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-    <title>Content-based image retrieval system</title>
+    <link rel="icon" type="image/x-icon" href="../static/image/logo.ico">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>CBIR system</title>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Simple image search engine</h1>
-        <form method="POST" enctype="multipart/form-data">
-            <input type="file" name="query_img"><br>
-            <input type="submit">
-        </form>
-        <h2>Query:</h2>
-        {% if query_path %}
-        <img src="{{ query_path }}" width="300px">
-        {% endif %}
-        <h2>Results:</h2>
-        {% for score in scores %}
-        <figure style="float: left; margin-right: 20px; margin-bottom: 20px;">
-            <img src="{{ score[1] }}" height="200px">
-            <figcaption>{{ score[0] }}</figcaption>
-        </figure>
-        {% endfor %}
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="../static/image/icon/logo_text.svg" alt="logo" class="logo" />
+            </a>
+        </div>
+        <div class="buttons">
+            <button class="home-button">Home</button>
+            <button class="about-button">
+                <a href="about.html" class="not-link">About</a>
+            </button>
+        </div>
+        <div class="icons">
+            <a href="https://github.com/ShenggKai/CBIR_System" target="_blank">
+                <img src="../static/image/icon/github.svg" alt="github" class="github-icon">
+            </a>
+            <img src="../static/image/icon/light.svg" alt="theme" class="theme-icon">
+        </div>
+    </header>
+
+    <div class="region">
+        <div class="upload-region">
+            <div class="note">
+                <!-- show error message here -->
+                <p class="format-note">Only .jpg files are accepted</p>
+            </div>
+
+            <div class="input">
+
+                <div class="custom-file-upload">
+                    <input type="file" id="file-input" accept="image/jpeg">
+                    <label for="file-input">
+                        <img src="../static/image/icon/upload.svg" alt="upload" class="upload-icon">
+                        <p class="text-button">Upload image</p>
+                    </label>
+                </div>
+
+                <div class="note">
+                    <p class="or-note">or</p>
+                </div>
+
+                <div class="url-upload-container">
+                    <input type="text" id="url-input" placeholder="Enter image URL">
+                </div>
+            </div>
+        </div>
+
+        <div class="search-region">
+            <div class="note-right">
+                <p class="dataset-note">Select dataset:</p>
+                <p class="method-note">Select method:</p>
+            </div>
+
+            <div class="input">
+                <select class="dataset-select">
+                    <option value="option1">Oxford Buildings</option>
+                    <option value="option2">Paris dataset</option>
+                </select>
+
+                <select class="method-select">
+                    <option value="option1">VGG16</option>
+                    <option value="option2">CNN</option>
+                </select>
+
+                <a href="result.html" class="no-underline">
+                    <button class="btn-search">
+                        <img src="../static/image/icon/search.svg" alt="search" class="search-icon">
+                        <p class="text-search">Search</p>
+                    </button>
+                </a>
+
+            </div>
+        </div>
+
     </div>
+
+    <div class="review-container">
+        <img src="../static/image/review.jpg" alt="review image" class="review-image">
+    </div>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>
