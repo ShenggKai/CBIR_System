@@ -1,6 +1,6 @@
-const fileInput = document.getElementById('file-input');
-const reviewImage = document.querySelector('.review-image');
-const errorMessage = document.querySelector('.format-note');
+const fileInput = document.getElementById('file-input'); // upload file
+const reviewImage = document.querySelector('.review-image'); // image preview
+const errorMessage = document.querySelector('.format-note'); // error message
 
 fileInput.addEventListener('change', function () {
     const file = this.files[0];
