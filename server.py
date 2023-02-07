@@ -11,29 +11,29 @@ app = Flask(__name__)
 
 
 # User choose between looking for in Oxford data or Paris data, default is Oxford
-selected_data_folder = r"static\dataset\Oxford5k"
+selected_data_folder = "static/dataset/Oxford5k"
 
 #read image features
 fe = FeatureExtractor()
 features = []
 image_paths = []
 
-if selected_data_folder == r"static\dataset\Paris6k": # if Paris
-    selected_feature_folder = r"static\feature\paris_feature"
+if selected_data_folder == "static/dataset/Paris6k": # if Paris
+    selected_feature_folder = "static/feature/paris_feature"
 
     for feature_path in os.listdir(selected_feature_folder):
         '''
         feature_path : "paris_defense_000000.npy"
         +
-        selected_feature_folder : "static\feature\paris_feature"
+        selected_feature_folder : "static/feature/paris_feature"
         =
-        feature_path_full : "static\feature\paris_feature\paris_defense_000000.npy"
+        feature_path_full : "static/feature/paris_feature/paris_defense_000000.npy"
         ______________________________________________________________
-        selected_data_folder : "static\dataset\Paris6k"
+        selected_data_folder : "static/dataset/Paris6k"
         +
         feature_path - ".npy" + ".jpg": "paris_defense_000000.jpg"
         =
-        image_paths : "static\dataset\Paris6k\paris_defense_000000.jpg"
+        image_paths : "static/dataset/Paris6k/paris_defense_000000.jpg"
         '''
 
         feature_path_full = os.path.join(selected_feature_folder, feature_path)
@@ -41,21 +41,21 @@ if selected_data_folder == r"static\dataset\Paris6k": # if Paris
         image_paths.append(os.path.join(selected_data_folder, os.path.splitext(feature_path)[0] + ".jpg"))
 
 else: # if Oxford
-    selected_feature_folder = r"static\feature\oxford_feature"
+    selected_feature_folder = "static/feature/oxford_feature"
 
     for feature_path in os.listdir(selected_feature_folder):
         '''
         feature_path : "all_souls_000000.npy"
         +
-        selected_feature_folder : "static\feature\oxford_feature"
+        selected_feature_folder : "static/feature/oxford_feature"
         =
-        feature_path_full : "static\feature\oxford_feature\all_souls_000000.npy"
+        feature_path_full : "static/feature/oxford_feature/all_souls_000000.npy"
         ______________________________________________________________
-        selected_data_folder : "static\dataset\Oxford5k"
+        selected_data_folder : "static/dataset/Oxford5k"
         +
         feature_path - ".npy" + ".jpg": "all_souls_000000.jpg"
         =
-        image_paths : "static\dataset\Oxford5k\all_souls_000000.jpg"
+        image_paths : "static/dataset/Oxford5k/all_souls_000000.jpg"
         '''
 
         feature_path_full = os.path.join(selected_feature_folder, feature_path)
@@ -73,7 +73,7 @@ def index():
 
         #save query image
         img = Image.open(file.stream)
-        uploaded_img_path = "static\\uploaded\\" + datetime.now().isoformat().replace(":", ".") + "_" + file.filename
+        uploaded_img_path = "static/uploaded/" + datetime.now().isoformat().replace(":", ".") + "_" + file.filename
         img.save(uploaded_img_path)
 
         #run search

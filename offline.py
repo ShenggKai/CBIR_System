@@ -4,11 +4,11 @@ from PIL import Image
 from feature_extractor import FeatureExtractor
 from tqdm import tqdm
 
-data_folder_oxford = r"static\dataset\Oxford5k"
-data_folder_paris = r"static\dataset\Paris6k"
+data_folder_oxford = "static/dataset/Oxford5k"
+data_folder_paris = "static/dataset/Paris6k"
 
-feature_folder_oxford = r"static\feature\oxford_feature"
-feature_folder_paris = r"static\feature\paris_feature"
+feature_folder_oxford = "static/feature/oxford_feature"
+feature_folder_paris = "static/feature/paris_feature"
 
 fe = FeatureExtractor()
 
