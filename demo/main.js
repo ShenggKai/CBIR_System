@@ -45,7 +45,7 @@ imageUrl.addEventListener('input', function () {
         })
         .catch(error => {
             errorMessage.style.display = "block";
-            errorMessage.style.color = '#E51515';
+            errorMessage.style.color = '#E51514';
             errorMessage.textContent = `Invalid URL: ${error}`;
         });
     }    
