@@ -34,7 +34,7 @@ imageUrl.addEventListener('input', function () {
         fetch(url)
         .then(response => {
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                throw new Error(`HTTP status: ${response.status}`);
             }
             return response.blob();
         })
@@ -46,7 +46,7 @@ imageUrl.addEventListener('input', function () {
         .catch(error => {
             errorMessage.style.display = "block";
             errorMessage.style.color = '#E51515';
-            errorMessage.textContent = `Invalid URL: ${error}`;
+            errorMessage.textContent = `${error}`;
         });
     }    
 });
