@@ -7,12 +7,6 @@ fileInput.addEventListener('change', function () {
     const reader = new FileReader();
 
     //check if the file is jpg or not
-    // if (file.type !== 'image/jpeg') {
-    //     alert("Error: Please upload a .jpg file!");
-    //     return;
-    // }
-    
-    //check if the file is jpg or not
     if (file.type !== "image/jpeg") {
         errorMessage.innerHTML = "Error: file type must be .jpg!";
         errorMessage.style.color = '#E51515';
