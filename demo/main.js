@@ -27,8 +27,11 @@ fileInput.addEventListener('change', function () {
 
 // function to upload image by URL
 imageUrl.addEventListener('input', function () {
-    const url = this.value;
-    fetch(url)
+    // check if the url value is empty or just whitespaces
+    const url = this.value.trim();
+    if (url)
+    {
+        fetch(url)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -45,4 +48,5 @@ imageUrl.addEventListener('input', function () {
             errorMessage.style.color = '#E51515';
             errorMessage.textContent = `Invalid URL: ${error}`;
         });
+    }    
 });
