@@ -27,7 +27,9 @@ fileInput.addEventListener('change', function () {
 
 // function to upload image by URL
 imageUrl.addEventListener('input', function () {
-    // check if the url value is empty or just whitespaces
+    // check if the url value is empty or just whitespaces and also check
+    // if the url contains image data or not
+    // for more information open developer tools in web browser
     const url = this.value.trim();
     if (url)
     {
