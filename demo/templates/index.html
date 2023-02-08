@@ -9,9 +9,12 @@
 </head>
 
 <body>
-    <input type="text" id="image-url">
-    <img id="preview-image">
-    <div class="error" id="error-message"></div>
+    <form method="POST" enctype="multipart/form-data" action="/result">
+        <input type="text" id="image-url" name="image-url">
+        <img id="preview-image">
+        <input type="submit">
+        <div class="error" id="error-message"></div>
+    </form>
 </body>
 
 <script>
