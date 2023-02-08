@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../static/image/icon/logo.ico">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
     <title>CBIR system</title>
 </head>
 
@@ -20,7 +20,7 @@
         <div class="buttons">
             <button class="home-button">Home</button>
             <button class="about-button">
-                <a href="about.html" class="not-link">About</a>
+                <a href="../static/about.html" class="not-link">About</a>
             </button>
         </div>
         <div class="icons">
@@ -32,7 +32,7 @@
     </header>
 
     <div class="region">
-        
+
         <div class="upload-region">
             <div class="note">
                 <!-- show error message here -->
@@ -42,7 +42,8 @@
             <div class="input">
 
                 <div class="custom-file-upload">
-                    <input type="file" id="file-input" accept="image/jpeg">
+                    <input type="file" id="file-input" name="query_img" accept="image/jpeg">
+
                     <label for="file-input">
                         <img src="../static/image/icon/upload.svg" alt="upload" class="upload-icon">
                         <p class="text-button">Upload image</p>
@@ -54,7 +55,7 @@
                 </div>
 
                 <div class="url-upload-container">
-                    <input type="text" id="url-input" placeholder="Enter image URL">
+                    <input type="text" id="url-input" name="query_img" placeholder="Enter image URL">
                 </div>
             </div>
         </div>
@@ -76,12 +77,12 @@
                     <option value="option2">CNN</option>
                 </select>
 
-                <a href="result.html" class="no-underline">
-                    <button class="btn-search">
+                <form method="POST" enctype="multipart/form-data">
+                    <button class="btn-search" type="submit">
                         <img src="../static/image/icon/search.svg" alt="search" class="search-icon">
                         <p class="text-search">Search</p>
                     </button>
-                </a>
+                </form>
 
             </div>
         </div>
@@ -92,7 +93,7 @@
         <img src="../static/image/review.jpg" alt="review image" class="review-image">
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="../static/js/main.js"></script>
 </body>
 
 </html>

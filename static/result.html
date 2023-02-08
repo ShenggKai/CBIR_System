@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../static/image/icon/logo.ico">
-    <link rel="stylesheet" href="css/style_result.css">
+    <link rel="stylesheet" href="../static/css/style_result.css">
     <title>Result - CBIR system</title>
 </head>
 
 <body>
     <header>
         <div class="logo-container">
-            <a href="index.html">
+            <a href="../templates/index.html">
                 <img src="../static/image/icon/logo_text.svg" alt="logo" class="logo" />
             </a>
         </div>
         <div class="buttons">
             <button class="home-button">
-                <a href="index.html" class="not-link">Home</a>
+                <a href="../templates/index.html" class="not-link">Home</a>
             </button>
             <button class="about-button">
                 <a href="about.html" class="not-link">About</a>
@@ -37,14 +37,23 @@
 
         <div class="left-side">
             <p class="text-query">Query</p>
-            <img src="../static/image/review.jpg" alt="query-image" class="query-image">
+            {% if query_path %}
+            <!-- <img src="../static/image/review.jpg" alt="query-image" class="query-image"> -->
+            <img src="{{ query_path }}" width="300px">
+            {% endif %}
         </div>
 
         <div class="vertical-line"></div>
 
         <div class="right-side">
             <p class="text-result">20 results (0.70 seconds)</p>
-            <img src="../static/image/img results.jpg" alt="results">
+            {% for score in scores %}
+            <!-- <img src="../static/image/img results.jpg" alt="results"> -->
+            <figure style="float: left; margin-right: 20px; margin-bottom: 20px;">
+                <img src="{{ score[1] }}" height="200px">
+                <figcaption>{{ score[0] }}</figcaption>
+            </figure>
+            {% endfor %}
         </div>
 
     </div>
