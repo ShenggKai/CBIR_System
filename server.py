@@ -66,25 +66,29 @@ else: # if Oxford
 features = np.array(features)
 
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/", methods=["GET"])
 def index():
-    if request.method == "POST":
-        file = request.files["query_img"]
+    return render_template("index.html")
 
-        #save query image
-        img = Image.open(file.stream)
-        uploaded_img_path = "static/uploaded/" + datetime.now().isoformat().replace(":", ".") + "_" + file.filename
-        img.save(uploaded_img_path)
+@app.route("/results", methods=["GET","POST"])
+def results():
+    # file = request.files["query_img"]
 
-        #run search
-        query = fe.extract(img)
-        dists = np.linalg.norm(features - query, axis=1) #compute L2 distance between query and all images
-        ids = np.argsort(dists)[:30] # top 30 results
-        scores = [(dists[id], image_paths[id]) for id in ids]
+    # #save query image
+    # img = Image.open(file.stream)
+    # uploaded_img_path = "static/uploaded/" + datetime.now().isoformat().replace(":", ".") + "_" + file.filename
+    # img.save(uploaded_img_path)
 
-        return render_template("result.html", query_path=uploaded_img_path, scores=scores)
-    else:
-        return render_template("index.html")
+    # #run search
+    # query = fe.extract(img)
+    # dists = np.linalg.norm(features - query, axis=1) #compute L2 distance between query and all images
+    # ids = np.argsort(dists)[:30] # top 30 results
+    # scores = [(dists[id], image_paths[id]) for id in ids]
+
+    # return render_template("result.html", query_path=uploaded_img_path, scores=scores)
+    return "dumemay"
+
+
 
 if __name__ == "__main__":
     app.run(debug=False)
