@@ -75,7 +75,7 @@ def about():
     return render_template("about.html")
 
 @app.route("/result", methods=["GET","POST"])
-def results():
+def result():
     # file = request.files["query_img"]
 
     # #save query image
