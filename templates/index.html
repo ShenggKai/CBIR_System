@@ -13,15 +13,19 @@
 <body>
     <header>
         <div class="logo-container">
-            <a href="index.html">
+            <form method="POST" enctype="multipart/form-data" action="/">
                 <img src="../static/image/icon/logo_text.svg" alt="logo" class="logo" />
-            </a>
+            </form>
         </div>
         <div class="buttons">
             <button class="home-button">Home</button>
-            <button class="about-button">
-                <a href="../static/about.html" class="not-link">About</a>
-            </button>
+
+            <form method="POST" enctype="multipart/form-data" action="/about">
+                <button class="about-button">
+                    <a class="not-link">About</a>
+                </button>
+            </form>
+
         </div>
         <div class="icons">
             <a href="https://github.com/ShenggKai/CBIR_System" target="_blank">

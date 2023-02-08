@@ -70,6 +70,10 @@ features = np.array(features)
 def index():
     return render_template("index.html")
 
+@app.route("/about", methods=["GET", "POST"])
+def about():
+    return render_template("about.html")
+
 @app.route("/results", methods=["GET","POST"])
 def results():
     # file = request.files["query_img"]
