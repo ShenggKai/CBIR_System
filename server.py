@@ -74,7 +74,7 @@ def index():
 def about():
     return render_template("about.html")
 
-@app.route("/results", methods=["GET","POST"])
+@app.route("/result", methods=["GET","POST"])
 def results():
     # file = request.files["query_img"]
 
@@ -90,7 +90,7 @@ def results():
     # scores = [(dists[id], image_paths[id]) for id in ids]
 
     # return render_template("result.html", query_path=uploaded_img_path, scores=scores)
-    return "dumemay"
+    return render_template("result.html")
 
 
 
