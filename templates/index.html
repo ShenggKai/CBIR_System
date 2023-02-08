@@ -35,65 +35,67 @@
         </div>
     </header>
 
-    <div class="region">
+    <form method="POST" enctype="multipart/form-data" action="/result">
+        <div class="region">
 
-        <div class="upload-region">
-            <div class="note">
-                <!-- show error message here -->
-                <p class="format-note">Only .jpg files are accepted</p>
-            </div>
-
-            <div class="input">
-
-                <div class="custom-file-upload">
-                    <input type="file" id="file-input" name="query_img" accept="image/jpeg">
-
-                    <label for="file-input">
-                        <img src="../static/image/icon/upload.svg" alt="upload" class="upload-icon">
-                        <p class="text-button">Upload image</p>
-                    </label>
-                </div>
-
+            <div class="upload-region">
                 <div class="note">
-                    <p class="or-note">or</p>
+                    <!-- show error message here -->
+                    <p class="format-note">Only .jpg files are accepted</p>
                 </div>
 
-                <div class="url-upload-container">
-                    <input type="text" id="url-input" name="query_img" placeholder="Enter image URL">
+                <div class="input">
+                    <!-- input  -->
+                    <div class="custom-file-upload">
+                        <input type="file" id="file-input" name="query_img" accept="image/jpeg">
+
+                        <label for="file-input">
+                            <img src="../static/image/icon/upload.svg" alt="upload" class="upload-icon">
+                            <p class="text-button">Upload image</p>
+                        </label>
+                    </div>
+
+                    <div class="note">
+                        <p class="or-note">or</p>
+                    </div>
+
+                    <div class="url-upload-container">
+                        <input type="text" id="url-input" name="query_img" placeholder="Enter image URL">
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="search-region">
-            <div class="note-right">
-                <p class="dataset-note">Select dataset:</p>
-                <p class="method-note">Select method:</p>
-            </div>
+            <div class="search-region">
+                <div class="note-right">
+                    <p class="dataset-note">Select dataset:</p>
+                    <p class="method-note">Select method:</p>
+                </div>
 
-            <div class="input">
-                <select class="dataset-select">
-                    <option value="option1">Oxford Buildings</option>
-                    <option value="option2">Paris dataset</option>
-                </select>
+                <div class="input">
+                    <select class="dataset-select">
+                        <option value="option1">Oxford Buildings</option>
+                        <option value="option2">Paris dataset</option>
+                    </select>
 
-                <select class="method-select">
-                    <option value="option1">VGG16</option>
-                    <option value="option2">CNN</option>
-                </select>
+                    <select class="method-select">
+                        <option value="option1">VGG16</option>
+                        <option value="option2">CNN</option>
+                    </select>
 
-                <!-- <form method="POST" enctype="multipart/form-data" action="/result"> -->
-                <a href="/result">
-                    <button class="btn-search" type="submit">
+                    <!-- summit -->
+                    
+                    <!-- <a href="/result"> -->
+                    <button class="btn-search" type="submit" value="Submit">
                         <img src="../static/image/icon/search.svg" alt="search" class="search-icon">
                         <p class="text-search">Search</p>
                     </button>
-                </a>
-                <!-- </form> -->
+                    <!-- </a> -->
 
+                </div>
             </div>
-        </div>
 
-    </div>
+        </div>
+    </form>
 
     <div class="review-container">
         <img src="../static/image/review.jpg" alt="review image" class="review-image">
