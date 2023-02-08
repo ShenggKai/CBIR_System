@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F9F7F0;
+    /* background-color: darkslategrey; */
+}
+
+/* header --------------------------------*/
+header {
+    height: 65px;
+    background-color: #3E98A4;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+}
+
+.icons {
+    display: flex;
+    /* align-items: center; */
+    /* margin-right: 25px; */
+}
+
+.github-icon,
+.theme-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.github-icon {
+    margin-left: 856px;
+}
+
+.theme-icon {
+    margin-left: 42px;
+}
+
+.home-button,
+.about-button {
+    /* top: 19px; */
+
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.home-button {
+    margin-left: 48px;
+    color: #D5D5D5;
+    /* font-weight: 600; */
+}
+
+.about-button {
+    margin-left: 35px;
+}
+
+.not-link{
+    text-decoration: none;
+    color: #D5D5D5;
+}
+/* end header --------------------------------*/
+
+/* query --------------------------------*/
+.main-container{
+    display: flex;
+}
+
+.left-side,
+.right-side {
+    margin-top: 25px;
+}
+
+.text-query{
+    margin-left: 186px;
+    margin-top: 0px;
+    font-style: normal;
+    font-weight: 520;
+    font-size: 24px;
+    
+    color: #188CA5;
+}
+
+.query-image{
+    width: 404px;
+    /* height: 304px; */
+    margin-left: 20px;
+}
+
+.vertical-line {
+    height: 655px;
+    margin-left: 20px;
+    margin-right: 20px;
+    /* margin-right: 20px; */
+    border: 1px solid #3E98A4;
+}
+
+.text-result{
+    margin-left: 321px;
+    margin-top: 0px;
+    font-style: normal;
+    font-weight: 520;
+    font-size: 24px;
+    /* identical to box height */
+
+    color: #188CA5;
+}
+
+.result-container {
+    margin-top: 20px;
+}
+
+/* end query --------------------------------*/
