@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     background-color: #F9F7F0;
+    overflow: hidden;
     /* background-color: darkslategrey; */
 }
 
@@ -61,14 +62,15 @@ header {
     margin-left: 35px;
 }
 
-.not-link{
+.not-link {
     text-decoration: none;
     color: #D5D5D5;
 }
+
 /* end header --------------------------------*/
 
 /* query --------------------------------*/
-.main-container{
+.main-container {
     display: flex;
 }
 
@@ -77,31 +79,31 @@ header {
     margin-top: 25px;
 }
 
-.text-query{
+.text-query {
     margin-left: 186px;
     margin-top: 0px;
     font-style: normal;
     font-weight: 520;
     font-size: 24px;
-    
+
     color: #188CA5;
 }
 
-.query-image{
+.query-image {
     width: 404px;
     /* height: 304px; */
     margin-left: 20px;
 }
 
 .vertical-line {
-    height: 655px;
     margin-left: 20px;
     margin-right: 20px;
+    height: 660px;
     /* margin-right: 20px; */
     border: 1px solid #3E98A4;
 }
 
-.text-result{
+.text-result {
     margin-left: 321px;
     margin-top: 0px;
     font-style: normal;
@@ -112,8 +114,62 @@ header {
     color: #188CA5;
 }
 
+
+/* For style scrollbar, Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 11px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #F9F7F0;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #66A6B4;
+    border-radius: 20px;
+    border: 2px solid #F9F7F0;
+}
+
+/* figure tag default have margin, disable it to render correctly */
+figure {
+    margin: 0;
+}
+
 .result-container {
-    margin-top: 20px;
+    width: 940px;
+    height: 565px;
+    /* background-color: yellowgreen; */
+    overflow: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* flex-wrap: wrap; */
+    grid-gap: 20px;
+}
+
+.result {
+    /* width: 200px; */
+    margin-right: 29px;
+    /* margin-bottom: 200px; */
+}
+
+.result-image {
+    width: 200px;
+}
+
+.caption-text {
+    width: 200px;
+    /* height: 27px; */
+    margin-top: 5px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    /* display: flex; */
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
 }
 
 /* end query --------------------------------*/
