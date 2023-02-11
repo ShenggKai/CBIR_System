@@ -53,7 +53,9 @@
                     {% for score in scores %}
                     <li>
                         <img src="{{ score[1] }}" alt="img" />
-                        <div class="overlay"><span>Score: 1.2</span></div>
+                        <!-- display name -->
+                        <div class="overlay"><span>{{ score[2] }}</span></div>
+                        <!-- display score -->
                         <span class="score-caption">{{ score[0] }}</span>
                     </li>
                     {% endfor %}

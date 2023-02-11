@@ -95,7 +95,8 @@ def result():
     query = fe.extract(img)
     dists = np.linalg.norm(features - query, axis=1) #compute L2 distance between query and all images
     ids = np.argsort(dists)[:30] # top 30 results
-    scores = [(dists[id], image_paths[id]) for id in ids]
+    # scores have format: score, image_path, image_name
+    scores = [(dists[id], image_paths[id], os.path.basename(image_paths[id])) for id in ids]
 
     return render_template("result.html", query_path=uploaded_img_path, scores=scores)
 
