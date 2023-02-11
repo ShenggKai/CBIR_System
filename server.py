@@ -74,30 +74,34 @@ def index():
 def about():
     return render_template("about.html")
 
-@app.route("/result", methods=["POST"])
+# @app.route("/result", methods=["POST"])
+# def result():
+#     file = request.files["query_img"]
+#     default_img_path = "static/image/review.jpg"
+
+#     try:
+#         #save query image
+#         img = Image.open(file.stream)
+#         uploaded_img_path = "static/uploaded/" + datetime.now().isoformat().replace(":", ".") + "_" + file.filename
+#         img.save(uploaded_img_path)
+#     except Exception as e: # if got error, use default image instead
+#         print("Error reading image:", e)
+#         print("Use default image")
+#         img = Image.open(default_img_path)
+#         uploaded_img_path = "static/uploaded/" + datetime.now().isoformat().replace(":", ".") + "_" + "default.jpg"
+#         img.save(uploaded_img_path)
+
+#     #run search
+#     query = fe.extract(img)
+#     dists = np.linalg.norm(features - query, axis=1) #compute L2 distance between query and all images
+#     ids = np.argsort(dists)[:30] # top 30 results
+#     scores = [(dists[id], image_paths[id]) for id in ids]
+
+#     return render_template("result.html", query_path=uploaded_img_path, scores=scores)
+
+@app.route("/result", methods=["GET"])
 def result():
-    file = request.files["query_img"]
-    default_img_path = "static/image/review.jpg"
-
-    try:
-        #save query image
-        img = Image.open(file.stream)
-        uploaded_img_path = "static/uploaded/" + datetime.now().isoformat().replace(":", ".") + "_" + file.filename
-        img.save(uploaded_img_path)
-    except Exception as e: # if got error, use default image instead
-        print("Error reading image:", e)
-        print("Use default image")
-        img = Image.open(default_img_path)
-        uploaded_img_path = "static/uploaded/" + datetime.now().isoformat().replace(":", ".") + "_" + "default.jpg"
-        img.save(uploaded_img_path)
-
-    #run search
-    query = fe.extract(img)
-    dists = np.linalg.norm(features - query, axis=1) #compute L2 distance between query and all images
-    ids = np.argsort(dists)[:30] # top 30 results
-    scores = [(dists[id], image_paths[id]) for id in ids]
-
-    return render_template("result.html", query_path=uploaded_img_path, scores=scores)
+    return render_template("result.html")
 
 
 
