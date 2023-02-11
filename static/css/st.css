@@ -130,46 +130,41 @@ header {
     border: 2px solid #F9F7F0;
 }
 
-/* figure tag default have margin, disable it to render correctly */
-figure {
+/* figure, ul tag default have margin, disable it to render correctly */
+ul {
     margin: 0;
+    padding: 0;
 }
 
 .result-container {
     width: 940px;
     height: 565px;
-    /* background-color: yellowgreen; */
     overflow: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    /* flex-wrap: wrap; */
+}
+
+.image-gallery {
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
     grid-gap: 20px;
+    padding-right: 10px;
 }
 
-.result {
-    /* width: 200px; */
-    margin-right: 29px;
-    /* margin-bottom: 200px; */
+.image-gallery>li {
+    height: 200px;
+    cursor: pointer;
+    position: relative;
+    flex-grow: 1;
 }
 
-.result-image {
-    width: 200px;
+.image-gallery li img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
 }
 
-.caption-text {
-    width: 200px;
-    /* height: 27px; */
-    margin-top: 5px;
 
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 19px;
-    /* display: flex; */
-    align-items: center;
-    text-align: center;
 
-    color: #000000;
-}
 
 /* end query --------------------------------*/
