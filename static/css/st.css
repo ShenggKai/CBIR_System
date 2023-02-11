@@ -11,7 +11,6 @@ header {
     height: 65px;
     background-color: #3E98A4;
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
     position: relative;
 }
