@@ -1,5 +1,6 @@
 import os
 import numpy as np
+from tqdm import tqdm
 from PIL import Image
 from pathlib import Path
 from feature_extractor import FeatureExtractor
@@ -10,61 +11,69 @@ from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
-
-# User choose between looking for in Oxford data or Paris data, default is Oxford
-selected_data_folder = "static/dataset/Oxford5k"
-
 #read image features
 fe = FeatureExtractor()
-features = []
-image_paths = []
+default_img_path = "static/image/review.jpg"
 
-if selected_data_folder == "static/dataset/Paris6k": # if Paris
-    selected_feature_folder = "static/feature/paris_feature"
+paris_features = []
+paris_image_paths = []
 
-    for feature_path in os.listdir(selected_feature_folder):
-        '''
-        feature_path : "paris_defense_000000.npy"
-        +
-        selected_feature_folder : "static/feature/paris_feature"
-        =
-        feature_path_full : "static/feature/paris_feature/paris_defense_000000.npy"
-        ______________________________________________________________
-        selected_data_folder : "static/dataset/Paris6k"
-        +
-        feature_path - ".npy" + ".jpg": "paris_defense_000000.jpg"
-        =
-        image_paths : "static/dataset/Paris6k/paris_defense_000000.jpg"
-        '''
+paris_data_folder = "static/dataset/Paris6k"
+paris_feature_folder = "static/feature/paris_feature"
 
-        feature_path_full = os.path.join(selected_feature_folder, feature_path)
-        features.append(np.load(feature_path_full))
-        image_paths.append(os.path.join(selected_data_folder, os.path.splitext(feature_path)[0] + ".jpg"))
+print("____________________________________________")
+print("Loading Paris data...")
+for feature_path in tqdm(os.listdir(paris_feature_folder)):
+    '''
+    paris_feature_folder : "static/feature/paris_feature"
+    +
+    feature_path : "paris_defense_000000.npy"
+    =
+    feature_path_full : "static/feature/paris_feature/paris_defense_000000.npy"
+    ______________________________________________________________
+    paris_data_folder : "static/dataset/Paris6k"
+    +
+    feature_path - ".npy" + ".jpg": "paris_defense_000000.jpg"
+    =
+    paris_image_paths : "static/dataset/Paris6k/paris_defense_000000.jpg"
+    '''
 
-else: # if Oxford
-    selected_feature_folder = "static/feature/oxford_feature"
+    feature_path_full = os.path.join(paris_feature_folder, feature_path)
+    paris_features.append(np.load(feature_path_full))
+    paris_image_paths.append(os.path.join(paris_data_folder, os.path.splitext(feature_path)[0] + ".jpg"))
+print("Done!")
 
-    for feature_path in os.listdir(selected_feature_folder):
-        '''
-        feature_path : "all_souls_000000.npy"
-        +
-        selected_feature_folder : "static/feature/oxford_feature"
-        =
-        feature_path_full : "static/feature/oxford_feature/all_souls_000000.npy"
-        ______________________________________________________________
-        selected_data_folder : "static/dataset/Oxford5k"
-        +
-        feature_path - ".npy" + ".jpg": "all_souls_000000.jpg"
-        =
-        image_paths : "static/dataset/Oxford5k/all_souls_000000.jpg"
-        '''
+oxford_features = []
+oxford_image_paths = []
 
-        feature_path_full = os.path.join(selected_feature_folder, feature_path)
-        features.append(np.load(feature_path_full))
-        image_paths.append(os.path.join(selected_data_folder, os.path.splitext(feature_path)[0] + ".jpg"))
+oxford__data_folder = "static/dataset/Oxford5k"
+oxford_feature_folder = "static/feature/oxford_feature"
+
+print("\nLoading Oxford data ...")
+for feature_path in tqdm(os.listdir(oxford_feature_folder)):
+    '''
+    oxford_feature_folder : "static/feature/oxford_feature"
+    +
+    feature_path : "all_souls_000000.npy"
+    =
+    feature_path_full : "static/feature/oxford_feature/all_souls_000000.npy"
+    ______________________________________________________________
+    oxford__data_folder : "static/dataset/Oxford5k"
+    +
+    feature_path - ".npy" + ".jpg": "all_souls_000000.jpg"
+    =
+    oxford_image_paths : "static/dataset/Oxford5k/all_souls_000000.jpg"
+    '''
+
+    feature_path_full = os.path.join(oxford_feature_folder, feature_path)
+
+    oxford_features.append(np.load(feature_path_full))
+    oxford_image_paths.append(os.path.join(oxford__data_folder, os.path.splitext(feature_path)[0] + ".jpg"))
+print("Done!")
 
 # convert features to numpy array
-features = np.array(features)
+oxford_features = np.array(oxford_features)
+paris_features = np.array(paris_features)
 
 
 @app.route("/", methods=["GET"])
@@ -79,8 +88,20 @@ def about():
 def result():
     start = time.perf_counter()
 
+    #take input from user - index.html
     file = request.files["query_img"]
-    default_img_path = "static/image/review.jpg"
+    selected_option = request.form.get("dropdown_dataset")
+
+    image_paths = []
+    features = []
+    if selected_option == "oxford": #if oxford is selected
+        image_paths = oxford_image_paths
+        features = oxford_features
+        print("choose oxford")
+    else: # if paris is selected
+        image_paths = paris_image_paths
+        features = paris_features
+        print("choose paris")
 
     try:
         #save query image
