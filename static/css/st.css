@@ -154,7 +154,7 @@ ul {
     height: 200px;
     cursor: pointer;
     position: relative;
-    flex-grow: 1;
+    flex: 1 1 auto; /* or flex: auto; */
 }
 
 .image-gallery li img {
@@ -164,6 +164,11 @@ ul {
     vertical-align: middle;
 }
 
+/* last row alignment */
+.image-gallery::after {
+    content: "";
+    flex-grow: 999;
+}
 
 
 
