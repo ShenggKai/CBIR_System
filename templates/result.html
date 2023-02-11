@@ -47,7 +47,8 @@
         <div class="vertical-line"></div>
 
         <div class="right-side">
-            <p class="text-result">30 results (0.70 seconds)</p>
+            <!-- display time elapsed -->
+            <p class="text-result">30 results ({{ time_elapsed }} seconds)</p>
             <div class="result-container">
                 <ul class="image-gallery">
                     {% for score in scores %}

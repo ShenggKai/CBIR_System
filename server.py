@@ -4,6 +4,7 @@ from PIL import Image
 from pathlib import Path
 from feature_extractor import FeatureExtractor
 from datetime import datetime
+import time
 from flask import Flask, request, render_template
 
 
@@ -76,6 +77,8 @@ def about():
 
 @app.route("/result", methods=["POST"])
 def result():
+    start = time.perf_counter()
+
     file = request.files["query_img"]
     default_img_path = "static/image/review.jpg"
 
@@ -98,7 +101,10 @@ def result():
     # scores have format: score, image_path, image_name
     scores = [(dists[id], image_paths[id], os.path.basename(image_paths[id])) for id in ids]
 
-    return render_template("result.html", query_path=uploaded_img_path, scores=scores)
+    end = time.perf_counter()
+    time_elapsed = round(end - start, 2) # round 2 decimal places
+
+    return render_template("result.html", query_path=uploaded_img_path, scores=scores, time_elapsed=time_elapsed)
 
 
 
