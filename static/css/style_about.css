@@ -2,7 +2,6 @@ body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     background-color: #F9F7F0;
-    /* background-color: darkslategrey; */
 }
 
 /* header --------------------------------*/
@@ -23,8 +22,6 @@ header {
 
 .icons {
     display: flex;
-    /* align-items: center; */
-    /* margin-right: 25px; */
 }
 
 .github-icon,
@@ -52,7 +49,6 @@ header {
 .about-button {
     left: 378px;
     color: white;
-    /* font-weight: 600; */
 }
 
 .not-link{
@@ -94,16 +90,12 @@ figcaption{
 }
 
 .text-container{
-    /* display: inline; */
     margin-left: 65px;
     margin-top: 89px;
     margin-right: 90px;
 }
 
 .title{
-    /* width: 734px;
-    height: 54px; */
-
     font-style: normal;
     font-weight: 530;
     font-size: 40px;

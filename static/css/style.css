@@ -2,7 +2,6 @@ body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     background-color: #F9F7F0;
-    /* background-color: darkslategrey; */
 }
 
 /* header --------------------------------*/
@@ -23,8 +22,6 @@ header {
 
 .icons {
     display: flex;
-    /* align-items: center; */
-    /* margin-right: 25px; */
 }
 
 .github-icon,
@@ -48,12 +45,10 @@ header {
 .home-button {
     left: 286px;
     color: white;
-    /* font-weight: 600; */
 }
 
 .about-button {
     left: 378px;
-    /* bottom: 19px; */
 }
 
 .not-link {
@@ -71,7 +66,6 @@ header {
 .region {
     display: flex;
     align-items: center;
-    /* height: 120px; */
 }
 
 .upload-region,
@@ -98,12 +92,9 @@ header {
 
 /* text Only accepted .jpg file -----------------------*/
 .note {
-    /* font-family: 'Open Sans'; */
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
-    /* line-height: 25px; */
-    /* identical to box height */
     height: 42px;
     display: flex;
     color: #5A5A5A;
@@ -115,36 +106,21 @@ header {
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
-    /* line-height: 25px; */
-    /* identical to box height */
     height: 42px;
     display: flex;
     color: #5A5A5A;
 }
 
 .format-note {
-    /* display: flex;
-    align-items: center;
-    text-align: center; */
-
-    /* margin-left: 174px; */
     margin-top: 17px;
 }
 
 .dataset-note {
-    /* display: flex;
-    align-items: center;
-    text-align: center; */
-
     margin-left: 28px;
     margin-top: 17px;
 }
 
 .method-note {
-    /* display: flex;
-    align-items: center;
-    text-align: center; */
-
     margin-left: 96px;
     margin-top: 17px;
 }
@@ -157,8 +133,6 @@ header {
 }
 
 .custom-file-upload {
-    /* display: inline-block;
-    display: flex; */
     width: 200px;
     height: 50px;
     background-color: white;
@@ -179,8 +153,6 @@ label {
 }
 
 .text-button {
-    /* Upload image */
-    /* width: 134px; */
     height: 27px;
 
     font-family: 'Open Sans', sans-serif;
@@ -268,7 +240,6 @@ select {
     height: 50px;
     border-radius: 10px;
 
-    /* font-family: 'Open Sans', sans-serif; */
     font-style: normal;
     font-weight: 530;
     font-size: 20px;
@@ -303,7 +274,6 @@ select {
     height: 50px;
     margin-top: 11px;
     margin-left: 18px;
-    /* align-items: center; */
 
     background: #FFFFFF;
     color: #188CA5;
@@ -321,7 +291,6 @@ select {
     margin-left: 14px;
     margin-top: 12px;
 
-    /* font-family: 'Open Sans'; */
     font-style: normal;
     font-weight: 530;
     font-size: 20px;
