@@ -97,11 +97,11 @@ def result():
     if selected_option == "oxford": #if oxford is selected
         image_paths = oxford_image_paths
         features = oxford_features
-        print("choose oxford")
+        print("chose Oxford dataset")
     else: # if paris is selected
         image_paths = paris_image_paths
         features = paris_features
-        print("choose paris")
+        print("chose Paris dataset")
 
     try:
         #save query image
