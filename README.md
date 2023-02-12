@@ -1,74 +1,51 @@
 ![last commit](https://img.shields.io/github/last-commit/ShenggKai/CBIR_System?logo=git)
-![repo size](https://img.shields.io/github/repo-size/ShenggKai/CBIR_System?logo=github)
-![code size](https://img.shields.io/github/languages/code-size/ShenggKai/CBIR_System?logo=GitHub)
 ![license](https://img.shields.io/github/license/ShenggKai/CBIR_System)
 ![Made with love in Vietnam](https://madewithlove.now.sh/vn?heart=true&colorB=%23da251d)
-# CS336: Multimedia Information Retrieval 2023
-Final Project: Project 2 - Image Retrieval  
-Supported features:
-- Retrieval methods DELF, CNN (ResNet), CNNIRPYTORCH are available on web app.
-- Particular object search: allow user to choose a specific area of the query image.
+# Content-Based Image Retrieval System
 
-## I. Contributors
-|Name|Email|Github profile|
-|:-:|:-:|:-:|
-|Nguyễn Quốc Đạt|19521338@gm.uit.edu.vn|[ShenggKai](https://github.com/ShenggKai)|
-|Hồ Bảo Quốc Thắng|19520271@gm.uit.edu.vn|[-](https)|
-|Trương Quốc Bình|19521270@gm.uit.edu.vn|-|
+## I. Overview
+    CS336: Multimedia Information Retrieval 2023
+    Final Project: Project 2 - Image Retrieval
 
-## II. Repo structure
-Overview
+This is a web-based project that implements a content-based image retrieval system (search for images that are similar in content to a query image).  
+
+The system allow users to select a region of an image instead of the entire image as the query.
+
+### Project layout
+To get started, focus on the following files and folders:
 ```
 .
 ├── ...
-├── retrieval.py
-├── app.py
-├── static
-│   ├── features
-│   ├── images
-│   ├── query
-│   └── uploads
-└── templates
+├── evaluation/
+├── static/
+│   ├── *dataset/
+│   │   ├── Oxford5k
+│   │   │   ├── all_souls_000000.jpg
+│   │   │   └── ...
+│   │   └── Paris6k
+│   │   │   ├── paris_defense_000000.jpg
+│   │   │   └── ...
+│   ├── *feature/
+│   ├── *uploaded/
+│   └── ...
+├── templates/
+│   ├── index.html
+│   ├── result.html
+│   └── ...
+├── feature_extractor.py
+├── offline.py
+├── server.py
+├── LICENSE
+└── README.md
 ```
-
-other:
-```
-/home/user/Projects/flask-tutorial
-├── flaskr/
-│   ├── __init__.py
-│   ├── db.py
-│   ├── schema.sql
-│   ├── auth.py
-│   ├── blog.py
-│   ├── templates/
-│   │   ├── base.html
-│   │   ├── auth/
-│   │   │   ├── login.html
-│   │   │   └── register.html
-│   │   └── blog/
-│   │       ├── create.html
-│   │       ├── index.html
-│   │       └── update.html
-│   └── static/
-│       └── style.css
-├── tests/
-│   ├── conftest.py
-│   ├── data.sql
-│   ├── test_factory.py
-│   ├── test_db.py
-│   ├── test_auth.py
-│   └── test_blog.py
-├── venv/
-├── setup.py
-└── MANIFEST.in
-```
-
-Files:
-- **./app.py**: flask web server.
-- **./retrieval.py**: retrieve images (standalone).
-
-Folders:
-- **./static/**: contains 2 datasets including features and 256x256 resized version, uploaded query images.
+- Place an `*` before the `dataset`, `feature`, `uploaded` folder, as these items and their sub-folders are not included in the repository.
+  - `dataset`: This project utilizes two datasets: [The Oxford Buildings Dataset](https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/) and [The Paris Dataset](https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/).
+  - Due to the [licensing terms](https://www.robots.ox.ac.uk/~vgg/terms/dataset-group-2-access.html) for these datasets, we are unable to share them directly. You need to download and install the datasets yourself.
+  - Download, unzip, and place all images of each dataset in the appropriate folder as shown in the tree structure above.
+  - Note that the Paris dataset contains [20 corrupted images](https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/corrupt.txt). After downloading the dataset, it will be necessary to delete these files.
+  - `feature` and `uploaded` folder: must be created before running the project.
+- `offline.py`: This script extracts a deep-feature from each database image. Each feature is a 4096D fc6 activation from a VGG16 model with ImageNet pre-trained weights.  
+- `server.py`: This script runs a web-server. You can send your query image to the server via a Flask web-interface. The server finds similar images to the query by a simple linear scan.
 
 ## III. Usage
 You can clone this repo and install datasets separately or you can download the whole compressed file that we have already downloaded and structured.
@@ -132,3 +109,10 @@ Of course the cropped part will be the new query.
 
 **Video:**
 ![Demo](https://i.imgur.com/LzP7kf4.png)
+
+## V. Authors
+|Name|Email|Student ID|
+|:-:|:-:|:-:|
+|Nguyễn Quốc Đạt|19521338@gm.uit.edu.vn|19521338
+|Hồ Bảo Quốc Thắng|19520271@gm.uit.edu.vn|19520271
+|Trương Quốc Bình|19521270@gm.uit.edu.vn|19521270
