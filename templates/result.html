@@ -39,9 +39,12 @@
 
         <div class="left-side">
             <p class="text-query">Query</p>
-            {% if query_path %}
-            <img src="{{ query_path }}" alt="query-image" class="query-image">
-            {% endif %}
+
+            <div class="query-container">
+                {% if query_path %}
+                <img src="{{ query_path }}" alt="query-image" class="query-image">
+                {% endif %}
+            </div>
         </div>
 
         <div class="vertical-line"></div>

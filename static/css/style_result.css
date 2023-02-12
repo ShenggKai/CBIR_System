@@ -88,10 +88,18 @@ header {
     color: #188CA5;
 }
 
-.query-image {
+.query-container{
     width: 404px;
-    /* height: 304px; */
+    height: 565px;
     margin-left: 20px;
+
+    overflow: hidden;
+}
+
+.query-image {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
 }
 
 .vertical-line {
@@ -188,6 +196,8 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* for display long name it will break into new line*/
+    word-break: break-all;
 }
 
 /* hover */
