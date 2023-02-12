@@ -39,8 +39,8 @@ To get started, focus on the following files and folders:
 └── README.md
 ```
 - Place an `*` before the `dataset`, `feature`, `uploaded` folder, as these items and their sub-folders are not included in the repository.
-  - `dataset`: This project utilizes two datasets: [The Oxford Buildings Dataset](https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/) and [The Paris Dataset](https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/).
-  - Due to the [licensing terms](https://www.robots.ox.ac.uk/~vgg/terms/dataset-group-2-access.html) for these datasets, we are unable to share them directly. You need to download and install the datasets yourself.
+  - This project utilizes two datasets: [The Oxford Buildings Dataset](https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/) and [The Paris Dataset](https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/).
+  - Due to the [licensing terms](https://www.robots.ox.ac.uk/~vgg/terms/dataset-group-2-access.html) for these datasets, we are unable to share them directly. You need to download the datasets yourself.
   - Download, unzip, and place all images of each dataset in the appropriate folder as shown in the tree structure above.
   - Note that the Paris dataset contains [20 corrupted images](https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/corrupt.txt). After downloading the dataset, it will be necessary to delete these files.
   - `feature` and `uploaded` folder: must be created before running the project.
