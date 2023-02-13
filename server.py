@@ -131,7 +131,7 @@ def result():
     #run search
     query = fe.extract(img)
     dists = np.linalg.norm(features - query, axis=1) #compute L2 distance between query and all images
-    ids = np.argsort(dists)[:30] # top 30 results
+    ids = np.argsort(dists)[:78] # top 30 results
 
     scores = []
     rank_list = []
