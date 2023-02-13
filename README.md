@@ -59,7 +59,7 @@ This project utilizes two datasets: [The Oxford Buildings Dataset](https://www.r
 ### 2. Install required libraries
 ! NOTE: This project using `Python v3.10.9`
 #### a) Anaconda
-After clone the repository, run the command
+After clone the repository and download all necessary folder, run the command
 ```sh
 conda env create -f environment.yml --name env_name
 ```
