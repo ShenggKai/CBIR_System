@@ -79,7 +79,7 @@ Install the libraries:
 pip install -r requirements.txt
 ```
 
-### 4. Start web server
+### 3. Start web server
 **cd** to parent folder and run the command
 ```sh
 flask --app server.py run
