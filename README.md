@@ -33,6 +33,9 @@ Focus on the following files and folders:
 │   ├── index.html
 │   ├── result.html
 │   └── ...
+├──
+├── environment.yml
+├── requirements.txt
 ├── feature_extractor.py
 ├── offline.py
 ├── server.py
@@ -49,7 +52,9 @@ This project utilizes two datasets: [The Oxford Buildings Dataset](https://www.r
 - Download, unzip, and place all images of each dataset in the appropriate folder as shown in the tree structure above.
 - Note that the Paris dataset contains [20 corrupted images](https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/corrupt.txt). After downloading the dataset, it will be necessary to delete these files.
 
-`feature` and `uploaded` folder: must be created before running the project.
+`feature` folder: download [here](https://drive.google.com/file/d/1KEmSnVfyMWs6ydP5mbFf0SZAb2HY0aob/view?usp=share_link)
+
+`uploaded` folder: must be created before running the project.
 
 ### 2. Install required libraries
 ! NOTE: This project using `Python v3.10.9`
@@ -61,7 +66,7 @@ conda env create -f environment.yml --name env_name
 Place the **env_name** with the name you want  
 
 #### b) PIP
-If you don't have Anaconda installed, use the command.
+If you don't have Anaconda installed, use the command to create a virtual environment.
 ```
 virtualenv myenv --python=python3.10.9
 ```
