@@ -88,7 +88,7 @@ or
 ```sh
 python server.py
 ```
-The system will automatically load the necessary data, when finished,
+The system will automatically load the necessary data. When finished,
 Ctrl + left click the URL: `http://127.0.0.1:5000`.
 
 ## IV. Demo.
