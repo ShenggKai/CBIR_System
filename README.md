@@ -53,16 +53,25 @@ This project utilizes two datasets: [The Oxford Buildings Dataset](https://www.r
 
 ### 2. Install required libraries
 ! NOTE: This project using `Python v3.10.9`
-
+#### a) Anaconda
 After clone the repository, run the command
 ```sh
 conda env create -f environment.yml --name env_name
 ```
 Place the **env_name** with the name you want  
 
-If you don't have Anaconda installed, use the command below.
+#### b) PIP
+If you don't have Anaconda installed, use the command.
 ```
-pip install Anaconda
+virtualenv myenv --python=python3.10.9
+```
+Activate the virtual environment by running the following command:
+```
+source myenv/bin/activate
+```
+Install the libraries:
+```
+pip install -r requirements.txt
 ```
 
 ### 4. Start web server
