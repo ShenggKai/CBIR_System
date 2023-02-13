@@ -131,7 +131,16 @@ def result():
     #run search
     query = fe.extract(img)
     dists = np.linalg.norm(features - query, axis=1) #compute L2 distance between query and all images
-    ids = np.argsort(dists)[:78] # top 30 results
+    ids = []
+    num_results = 0
+
+    if chose_oxford == True:
+        ids = np.argsort(dists)[:78] # top 78 results for Oxford dataset
+        num_results = 78
+    else:
+        ids = np.argsort(dists)[:117] # top 117 results for Paris dataset
+        num_results = 117
+
 
     scores = []
     rank_list = []
@@ -163,7 +172,7 @@ def result():
     with open(file_path, "w") as f:
         f.write("\n".join(rank_list))
 
-    return render_template("result.html", query_path=uploaded_img_path, scores=scores, time_elapsed=time_elapsed)
+    return render_template("result.html", query_path=uploaded_img_path, scores=scores, time_elapsed=time_elapsed, num_results=num_results)
 
 
 
