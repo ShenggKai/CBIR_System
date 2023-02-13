@@ -9,8 +9,7 @@ from datetime import datetime
 
 #read image features
 fe = FeatureExtractor()
-# default_img_path = "static/image/review.jpg"
-default_img_path = "static/dataset/Oxford5k/all_souls_000013.jpg"
+default_img_path = "static/image/review.jpg"
 paris_features = []
 paris_image_paths = []
 
@@ -19,7 +18,7 @@ paris_feature_folder = "static/feature/paris_feature"
 
 print("____________________________________________")
 print("Loading Paris data...")
-for feature_path in tqdm(os.listdir(paris_feature_folder)[:50]):
+for feature_path in tqdm(os.listdir(paris_feature_folder)):
     '''
     paris_feature_folder : "static/feature/paris_feature"
     +
@@ -46,7 +45,7 @@ oxford__data_folder = "static/dataset/Oxford5k"
 oxford_feature_folder = "static/feature/oxford_feature"
 
 print("\nLoading Oxford data ...")
-for feature_path in tqdm(os.listdir(oxford_feature_folder)[:50]):
+for feature_path in tqdm(os.listdir(oxford_feature_folder)):
     '''
     oxford_feature_folder : "static/feature/oxford_feature"
     +
@@ -71,8 +70,7 @@ print("Done!")
 oxford_features = np.array(oxford_features)
 paris_features = np.array(paris_features)
 
-# demo
-selected_option = "oxford"
+
 
 image_paths = []
 features = []
@@ -88,45 +86,41 @@ else: # if paris is selected
     features = paris_features
     print("chose Paris dataset")
 
+    img = Image.open(default_img_path)
 
-# use default image instead
-img = Image.open(default_img_path)
+    #run search
+    query = fe.extract(img)
+    dists = np.linalg.norm(features - query, axis=1) #compute L2 distance between query and all images
+    ids = np.argsort(dists)[:30] # top 30 results
+    # scores have format: score, image_path, image_name
+    # scores = [(dists[id], image_paths[id], os.path.basename(image_paths[id])) for id in ids]
 
-#run search
-query = fe.extract(img)
-dists = np.linalg.norm(features - query, axis=1) #compute L2 distance between query and all images
-ids = np.argsort(dists)[:30] # top 30 results
-# scores have format: score, image_path, image_name
-# scores = [(dists[id], image_paths[id], os.path.basename(image_paths[id])) for id in ids]
+    scores = []
+    rank_list = []
 
-scores = []
-rank_list = []
+    for id in ids:
+        distance = dists[id]
+        image_path = image_paths[id]
 
-for id in ids:
-    distance = dists[id]
-    image_path = image_paths[id]
+        image_name = os.path.basename(image_path)
+        rank_list.append(os.path.splitext(image_name)[0])
 
-    image_name = os.path.basename(image_path)
-    rank_list.append(os.path.splitext(image_name)[0])
+        score = (distance, image_path, image_name)
+        scores.append(score)
 
-    score = (distance, image_path, image_name)
-    scores.append(score)
+    # remove path
+    query_image = os.path.basename(default_img_path)
+    # remove extension .jpg
+    query_image = os.path.splitext(query_image)[0]
 
-# remove path
-query_image = os.path.basename(default_img_path)
-# remove extension .jpg
-query_image = os.path.splitext(query_image)[0]
+    if chose_oxford == True:
+        file_path = "evaluation/RlOxford_" + query_image + ".txt"
+        print("chose oxford")
+    else:
+        file_path = "evaluation/RlParis_" + query_image + ".txt"
 
-if chose_oxford == True:
-    file_path = "evaluation/RlOxford_" + query_image + ".txt"
-    print("chose oxford")
-else:
-    file_path = "evaluation/RlParis_" + query_image + ".txt"
-
-# write the rank list to a file
-if not os.path.exists(file_path):
-    open(file_path, 'w').close()  # create empty file if it doesn't exist
-with open(file_path, "w") as f:
-    f.write("\n".join(rank_list))
-
-print(scores)
+    # write the rank list to a file
+    if not os.path.exists(file_path):
+        open(file_path, 'w').close()  # create empty file if it doesn't exist
+    with open(file_path, "w") as f:
+        f.write("\n".join(rank_list))

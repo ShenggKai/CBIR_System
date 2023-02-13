@@ -94,20 +94,30 @@ def result():
 
     image_paths = []
     features = []
+    chose_oxford = False # chose Paris
+
     if selected_option == "oxford": #if oxford is selected
         image_paths = oxford_image_paths
         features = oxford_features
         print("chose Oxford dataset")
+        chose_oxford = True
     else: # if paris is selected
         image_paths = paris_image_paths
         features = paris_features
         print("chose Paris dataset")
+
+    
+    query_image = "" # for save query image name
 
     try:
         #save query image
         img = Image.open(file.stream)
         uploaded_img_path = "static/uploaded/" + datetime.now().isoformat().replace(":", ".") + "_" + file.filename
         img.save(uploaded_img_path)
+
+        # remove extension .jpg
+        query_image = os.path.splitext(file.filename)[0]
+
     except Exception as e: # if got error, use default image instead
         print("Error reading image:", e)
         print("Use default image")
@@ -115,15 +125,43 @@ def result():
         uploaded_img_path = "static/uploaded/" + datetime.now().isoformat().replace(":", ".") + "_" + "default.jpg"
         img.save(uploaded_img_path)
 
+        query_image = os.path.basename(default_img_path)
+        query_image = os.path.splitext(query_image)[0]
+
     #run search
     query = fe.extract(img)
     dists = np.linalg.norm(features - query, axis=1) #compute L2 distance between query and all images
     ids = np.argsort(dists)[:30] # top 30 results
+
+    scores = []
+    rank_list = []
+
     # scores have format: score, image_path, image_name
-    scores = [(dists[id], image_paths[id], os.path.basename(image_paths[id])) for id in ids]
+    for id in ids:
+        distance = dists[id]
+        image_path = image_paths[id]
+
+        image_name = os.path.basename(image_path)
+        rank_list.append(os.path.splitext(image_name)[0])
+
+        score = (distance, image_path, image_name)
+        scores.append(score)
 
     end = time.perf_counter()
     time_elapsed = round(end - start, 2) # round 2 decimal places
+
+
+    if chose_oxford == True:
+        file_path = "evaluation/RlOxford_" + query_image + ".txt"
+        print("chose oxford")
+    else:
+        file_path = "evaluation/RlParis_" + query_image + ".txt"
+
+    # write the rank list to a file
+    if not os.path.exists(file_path):
+        open(file_path, 'w').close()  # create empty file if it doesn't exist
+    with open(file_path, "w") as f:
+        f.write("\n".join(rank_list))
 
     return render_template("result.html", query_path=uploaded_img_path, scores=scores, time_elapsed=time_elapsed)
 
