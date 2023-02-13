@@ -7,6 +7,7 @@
     CS336: Multimedia Information Retrieval 2023
     Final Project: Project 2 - Image Retrieval
 
+### Intro
 This is a web-based project that implements a content-based image retrieval system (search for images that are similar in content to a query image).  
 
 The system allow users to select a region of an image instead of the entire image as the query.
@@ -38,23 +39,20 @@ To get started, focus on the following files and folders:
 ├── LICENSE
 └── README.md
 ```
-- Place an `*` before the `dataset`, `feature`, `uploaded` folder, as these items and their sub-folders are not included in the repository.
-  - This project utilizes two datasets: [The Oxford Buildings Dataset](https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/) and [The Paris Dataset](https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/).
-  - Due to the [licensing terms](https://www.robots.ox.ac.uk/~vgg/terms/dataset-group-2-access.html) for these datasets, we are unable to share them directly. You need to download the datasets yourself.
-  - Download, unzip, and place all images of each dataset in the appropriate folder as shown in the tree structure above.
-  - Note that the Paris dataset contains [20 corrupted images](https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/corrupt.txt). After downloading the dataset, it will be necessary to delete these files.
-  - `feature` and `uploaded` folder: must be created before running the project.
+- Place an `*` before the `dataset`, `feature`, `uploaded` folder, as these items and their sub-folders are not included in the repository. See [Download datasets](#1.-Download-datasets)
 - `offline.py`: This script extracts a deep-feature from each database image. Each feature is a 4096D fc6 activation from a VGG16 model with ImageNet pre-trained weights.  
 - `server.py`: This script runs a web-server. You can send your query image to the server via a Flask web-interface. The server finds similar images to the query by a simple linear scan.
 
-## III. Usage
+## II. Usage
 You can clone this repo and install datasets separately or you can download the whole compressed file that we have already downloaded and structured.
 
-### 1. Install datasets separately
+### 1. Download datasets
+This project utilizes two datasets: [The Oxford Buildings Dataset](https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/) and [The Paris Dataset](https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/). Due to the [licensing terms](https://www.robots.ox.ac.uk/~vgg/terms/dataset-group-2-access.html) for these datasets, we are unable to share them directly. You need to download yourself.
+- Download, unzip, and place all images of each dataset in the appropriate folder as shown in the tree structure above.
+- Note that the Paris dataset contains [20 corrupted images](https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/corrupt.txt). After downloading the dataset, it will be necessary to delete these files.
 
-Datasets use for the project:  
-- [**Oxford Buildings Dataset**](https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/) (5062 images)
-- [**Paris Dataset**](https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/) (6412 images - 20 images are corrupted, list of corrupt images is available [here](https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/corrupt.txt))
+`feature` and `uploaded` folder: must be created before running the project.
+
 
 Download the compressed file [here](https://) and we require user an extra structuring step, **./static** should look like this:
 
