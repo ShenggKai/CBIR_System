@@ -24,6 +24,9 @@ uploaded/
 
 # exclude demo folder
 # demo/
+
+# exclude file .txt
+evaluation/*.txt
 #----------------------------------------------------------------#
 
 #for python
