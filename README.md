@@ -91,13 +91,13 @@ python server.py
 The system will automatically load the necessary data. When finished,
 Ctrl + left click the URL: `http://127.0.0.1:5000`.
 
-## IV. Demo.
+## III. Demo.
 ![Demo](https://i.imgur.com/5qKLLww.png)
 
 **Video:**
 ![Demo](https://i.imgur.com/LzP7kf4.png)
 
-## V. Authors
+## IV. Authors
 |Name|Email|Student ID|
 |:-:|:-:|:-:|
 |Nguyễn Quốc Đạt|19521338@gm.uit.edu.vn|19521338
