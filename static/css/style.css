@@ -309,16 +309,17 @@ select {
 .review-container {
     width: 1040px;
     height: 457px;
-    margin-left: 184px;
-    margin-top: 25px;
-
+    margin: 25px auto;
     overflow: hidden;
 }
 
-.review-image {
+#review-image {
     object-fit: contain;
     width: 100%;
     height: 100%;
 }
 
 /* end image review -------------------*/
+/* .cropper-container {
+    display: none;
+} */

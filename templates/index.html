@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../static/image/icon/logo.ico">
     <link rel="stylesheet" href="../static/css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.4/cropper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.js"></script>
+
     <title>CBIR system</title>
 </head>
 
@@ -33,74 +37,77 @@
         </div>
     </header>
 
-    <form method="POST" enctype="multipart/form-data" action="/result">
-        <div class="region">
+    <main>
+        <form method="POST" enctype="multipart/form-data" action="/result">
+            <div class="region">
 
-            <div class="upload-region">
-                <div class="note">
-                    <!-- show error message here -->
-                    <p class="format-note">Only .jpg files are accepted</p>
-                </div>
-
-                <div class="input">
-                    <!-- input  -->
-                    <div class="custom-file-upload">
-                        <input type="file" id="file-input" name="query_img" accept="image/jpeg">
-
-                        <label for="file-input">
-                            <img src="../static/image/icon/upload.svg" alt="upload" class="upload-icon">
-                            <p class="text-button">Upload image</p>
-                        </label>
-                    </div>
-
+                <div class="upload-region">
                     <div class="note">
-                        <p class="or-note">or</p>
+                        <!-- show error message here -->
+                        <p class="format-note">Only .jpg files are accepted</p>
                     </div>
 
-                    <div class="url-upload-container">
-                        <input type="text" id="url-input" name="query_img" placeholder="Enter image URL">
+                    <div class="input">
+                        <!-- input  -->
+                        <div class="custom-file-upload">
+                            <input type="file" id="file-input" name="query_img" accept="image/jpeg">
+
+                            <label for="file-input">
+                                <img src="../static/image/icon/upload.svg" alt="upload" class="upload-icon">
+                                <p class="text-button">Upload image</p>
+                            </label>
+                        </div>
+
+                        <div class="note">
+                            <p class="or-note">or</p>
+                        </div>
+
+                        <div class="url-upload-container">
+                            <input type="text" id="url-input" name="query_img" placeholder="Enter image URL">
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="search-region">
-                <div class="note-right">
-                    <p class="dataset-note">Select dataset:</p>
-                    <p class="method-note">Select method:</p>
+                <div class="search-region">
+                    <div class="note-right">
+                        <p class="dataset-note">Select dataset:</p>
+                        <p class="method-note">Select method:</p>
+                    </div>
+
+                    <div class="input">
+                        <select class="dataset-select" name="dropdown_dataset">
+                            <option value="oxford">Oxford Buildings</option>
+                            <option value="paris">Paris dataset</option>
+                        </select>
+
+                        <select class="method-select" name="dropdown_method">
+                            <option value="vgg16">VGG16</option>
+                            <option value="cnn">CNN</option>
+                        </select>
+
+                        <!-- summit -->
+                        <button class="btn-search" type="submit" value="Submit">
+                            <img src="../static/image/icon/search.svg" alt="search" class="search-icon">
+                            <p class="text-search">Search</p>
+                        </button>
+
+                    </div>
                 </div>
 
-                <div class="input">
-                    <select class="dataset-select" name="dropdown_dataset">
-                        <option value="oxford">Oxford Buildings</option>
-                        <option value="paris">Paris dataset</option>
-                    </select>
-
-                    <select class="method-select" name="dropdown_method">
-                        <option value="vgg16">VGG16</option>
-                        <option value="cnn">CNN</option>
-                    </select>
-
-                    <!-- summit -->
-                    <button class="btn-search" type="submit" value="Submit">
-                        <img src="../static/image/icon/search.svg" alt="search" class="search-icon">
-                        <p class="text-search">Search</p>
-                    </button>
-
-                </div>
             </div>
+        </form>
 
+        <div class="review-container">
+            <img src="../static/image/review.jpg" alt="review image" id="review-image">
         </div>
-    </form>
-
-    <div class="review-container">
-        <img src="../static/image/review.jpg" alt="review image" class="review-image">
-    </div>
+    </main>
 
     <script>
         const fileInput = document.getElementById('file-input'); // upload image file
         const imageUrl = document.getElementById('url-input'); // upload image by URL
-        const reviewImage = document.querySelector('.review-image'); // image preview
+        const reviewImage = document.getElementById('review-image'); // image preview
         const errorMessage = document.querySelector('.format-note'); // error message
+        let cropper = null;
 
         // function to upload image file
         fileInput.addEventListener('change', function () {
@@ -149,6 +156,18 @@
                         errorMessage.textContent = `${error}`;
                     });
             }
+        });
+
+        // for cropping review image
+        reviewImage.addEventListener('click', function () {
+            // Show the interface by calling the `cropper()` method
+            cropper = new Cropper(this, {
+                viewMode: 1,
+            });
+
+            // Remove the hidden class from the .cropper-container element
+            // const cropperContainer = cropper.cropperContainer;
+            // cropperContainer.classList.remove('hidden');
         });
     </script>
 </body>
