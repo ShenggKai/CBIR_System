@@ -25,14 +25,8 @@ uploaded/
 # exclude demo folder
 # demo/
 
-# exclude file .txt
-evaluation/*.txt
-
 # exlude query folder
 query/
-
-# exlude result folder
-result/
 #----------------------------------------------------------------#
 
 #for python
