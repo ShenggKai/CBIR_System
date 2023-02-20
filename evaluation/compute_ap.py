@@ -46,7 +46,7 @@ if __name__ == '__main__':
     # check whether the system have three arguments or not
     if len(sys.argv) != 3:
         # file=sys.stderr to direct the output of the print statement to the standard error stream
-        print("Usage: python compute_ap.py [GROUNDTRUTH QUERY] [RANKED LIST]", file=sys.stderr)
+        print("Usage: python compute_ap.py [GROUNDTRUTH QUERY] [RANKED LIST].txt", file=sys.stderr)
         sys.exit(-1)
 
     # load ground truth query set
