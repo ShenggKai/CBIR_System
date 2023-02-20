@@ -27,6 +27,9 @@ uploaded/
 
 # exclude file .txt
 evaluation/*.txt
+
+# eclude query folder
+query/
 #----------------------------------------------------------------#
 
 #for python
