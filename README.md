@@ -92,8 +92,8 @@ The system will automatically load the necessary data. When finished,
 Ctrl + left click the URL: `http://127.0.0.1:5000`.
 
 ## III. Demo
-Click this image below
-[![Demo](static\image\demo.png)](https://youtu.be/gct-OMgGbPE)
+Click this image bel
+[![Demo](https://github.com/ShenggKai/CBIR_System/blob/master/static/image/demo.png?raw=true)](https://youtu.be/gct-OMgGbPE)
 
 ## IV. Authors
 |Name|Email|Student ID|
