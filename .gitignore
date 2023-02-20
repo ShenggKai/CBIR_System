@@ -28,8 +28,11 @@ uploaded/
 # exclude file .txt
 evaluation/*.txt
 
-# eclude query folder
+# exlude query folder
 query/
+
+# exlude result folder
+result/
 #----------------------------------------------------------------#
 
 #for python

@@ -161,10 +161,10 @@ def result():
 
 
     if chose_oxford == True:
-        file_path = "evaluation/RlOxford_" + query_image + ".txt"
+        file_path = "evaluation/result/result_oxford/" + query_image + ".txt"
         print("chose oxford")
     else:
-        file_path = "evaluation/RlParis_" + query_image + ".txt"
+        file_path = "evaluation/result/result_paris/" + query_image + ".txt"
 
     # write the rank list to a file
     if not os.path.exists(file_path):
