@@ -91,11 +91,9 @@ python server.py
 The system will automatically load the necessary data. When finished,
 Ctrl + left click the URL: `http://127.0.0.1:5000`.
 
-## III. Demo.
-![Demo](https://i.imgur.com/5qKLLww.png)
-
-**Video:**
-![Demo](https://i.imgur.com/LzP7kf4.png)
+## III. Demo
+Click this image below
+[![Demo](static\image\demo.png)](https://youtu.be/gct-OMgGbPE)
 
 ## IV. Authors
 |Name|Email|Student ID|
